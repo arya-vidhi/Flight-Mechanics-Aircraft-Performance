@@ -1,0 +1,7 @@
+import pandas as pd
+MAC=61.794
+X1=14.2;X2=109.7
+df=pd.read_csv('cg_data.csv')
+df['CG_calc_in']=(X1*df.Nose_Reaction_kg+X2*(df.Port_Reaction_kg+df.Starboard_Reaction_kg))/df.Total_kg
+df['CG_MAC_calc']=df.CG_calc_in/MAC
+print(df)
